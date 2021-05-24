@@ -1,6 +1,7 @@
 var mosquitoes = []
 var svg = d3.select("svg");
 var currentIndex = 0;
+transitionTime = 1000
 
 d3.json("data/mosquitoes.json")
     .then(function(data){
@@ -29,6 +30,8 @@ function update(){
     var mosquito = mosquitoes[currentIndex];
     svg.selectAll("image")
 	.data([mosquito]) 	
+    .transition()
+    .duration(transitionTime)
     .attr('x', function(data){return data.x;})
     .attr('y', function(data){return data.y;})
     .attr('width', 50)
