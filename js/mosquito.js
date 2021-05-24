@@ -1,7 +1,9 @@
-var mosquitoes = []
+var mosquitoes = [];
 var svg = d3.select("svg");
 var currentIndex = 0;
-transitionTime = 1000
+transitionTime = 1000;
+mosquitoWidth = 50;
+mosquitoHeight = 50;
 
 d3.json("data/mosquitoes.json")
     .then(function(data){
@@ -34,8 +36,8 @@ function update(){
     .duration(transitionTime)
     .attr('x', function(data){return data.x;})
     .attr('y', function(data){return data.y;})
-    .attr('width', 50)
-    .attr('height', 50)
+    .attr('width', mosquitoWidth)
+    .attr('height', mosquitoHeight)
     .attr("xlink:href", "assets/mosquito.png")
 }
 
