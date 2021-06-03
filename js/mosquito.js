@@ -56,12 +56,8 @@ svg.selectAll("image").on("click", function(event){
     event.stopPropagation();
 })
 
-svg.on("click", function(event){
-    backgroundUpdate();
-    event.stopPropagation();
-})
-
 d3.select("html").on("click", function(event){
     backgroundUpdate();
+    event.stopPropagation();
 })
 
